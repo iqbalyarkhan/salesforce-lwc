@@ -1,0 +1,27 @@
+<template>
+  <lightning-card title="Contracts" icon-name="standard:contract">
+      <div class="slds-m-around_medium">
+          <template if:true={contracts.data}>
+              <template if:true={hasContracts}>
+                  <lightning-datatable
+                      key-field="Id"
+                      data={contracts.data}
+                      columns={columns}
+                      hide-checkbox-column
+                      show-row-number-column>
+                  </lightning-datatable>
+              </template>
+              <template if:false={hasContracts}>
+                  <div class="slds-text-align_center slds-m-around_medium">
+                      No contracts found for this account: {recordId}
+                  </div>
+              </template>
+          </template>
+          <template if:true={contracts.error}>
+              <div class="slds-text-color_error">
+                  Error loading contracts: {contracts.error.message}
+              </div>
+          </template>
+      </div>
+  </lightning-card>
+</template>
