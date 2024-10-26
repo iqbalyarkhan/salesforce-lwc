@@ -198,3 +198,12 @@ npm run prettier
 ## Code Tours
 
 Code Tours are guided walkthroughs that will help you understand the app code better. To be able to run them, install the [CodeTour VSCode extension](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour).
+
+## Tips
+
+### Pulling Custom Fields
+To pull custom fields from source, run this:
+
+```
+sfdx force:source:retrieve -m CustomField:Contract.ContractUrl__c  
+```

@@ -1,24 +1,8 @@
-// import { LightningElement, api } from 'lwc';
-
-// export default class ContractsList extends LightningElement {
-//     @api recordId;
-
-//     connectedCallback() {
-//         console.log('2:29am: Component initialized - recordId:', this.recordId);
-//     }
-
-//     renderedCallback() {
-//         console.log('2:29am: Component rendered - recordId:', this.recordId);
-//     }
-// }
-
-// contractsList.js
 import { LightningElement, api, wire } from 'lwc';
 import getAccountContracts from '@salesforce/apex/ContractController.getAccountContracts';
 
 const COLUMNS = [
-    { label: 'Contract Number', fieldName: 'ContractNumber', type: 'text' },
-    { label: 'Contract Name', fieldName: 'Name', type: 'text' },
+    { label: 'Contract Number', fieldName: 'ContractUrl__c', type: 'url', typeAttributes: { label: { fieldName: 'ContractNumber' }, target: '_blank' } },
     { label: 'Status', fieldName: 'Status', type: 'text' },
     { label: 'Contract Start Date', fieldName: 'StartDate', type: 'date' },
     { label: 'Contract End Date', fieldName: 'EndDate', type: 'date' }
